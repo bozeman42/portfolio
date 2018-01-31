@@ -16,6 +16,7 @@
   //primary navigation slide-in effect
   if ($(window).width() > MQL) {
     var headerHeight = $('#mainNav').height();
+    console.log('HeaderHeight:',headerHeight);
     $(window).on('scroll', {
         previousTop: 0
       },
