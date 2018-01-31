@@ -17,14 +17,6 @@ app.service('BlogService', function () {
   }
 
   bs.posts = {
-    'test-post': {
-      heading: 'Man must explore, and this is exploration at its greatest',
-      subheading: 'Problems look mighty small from 150 miles up',
-      date: 'Some date',
-      author: 'StartBootstrap',
-      tags: [],
-      template: templateAddr('test-post.html')
-    },
     'first-post': {
       heading: 'This is a new test post',
       subheading: 'This might work!',
