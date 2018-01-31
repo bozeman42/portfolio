@@ -1,5 +1,5 @@
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('img/post-bg.jpg')">
+<header class="masthead" ng-style="{'background-image':'url({{pc.selectedPost.headerImage}})'}">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
@@ -8,8 +8,8 @@
           <h1>{{pc.selectedPost.heading}}</h1>
           <h2 class="subheading">{{pc.selectedPost.subheading}}</h2>
           <span class="meta">Posted by
-            <a href="#"></a>
-            on August 24, 2017</span>
+            <a href="#">{{pc.selectedPost.author}}</a>
+            on {{pc.selectedPost.date}}</span>
         </div>
       </div>
     </div>

@@ -8,21 +8,18 @@ app.config(function($routeProvider, $locationProvider) {
     controller: 'BlogController as bc'
   })
   .when('/portfolio', {
-    templateUrl: '/views/templates/portfolio.html',
-    controller: 'PortfolioController as pc'
+    templateUrl: '/views/templates/portfolio.html'
   })
   .when('/about', {
-    templateUrl: '/views/templates/about.html',
-    controller: 'AboutController as ac'
+    templateUrl: '/views/templates/about.html'
   })
   .when('/post/:post?', {
     templateUrl: '/views/templates/post.html',
     controller: 'PostController as pc'
   })
-  .when('/contact', {
-    templateUrl: '/views/templates/contact.html',
-    controller: 'ContactController as cc'
-  })
+  // .when('/contact', {
+  //   templateUrl: '/views/templates/contact.html'
+  // })
   .otherwise({
     redirectTo: '/blog'
   });

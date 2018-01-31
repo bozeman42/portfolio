@@ -7,21 +7,28 @@ app.service('BlogService', function () {
     return TEMPLATE_ADDR + template;
   }
 
+  // TEMPLATE FOR POST OBJECT
   var postObjectTemplate = {
     heading: '',
     subheading: '',
+    headerImage: 'img/post-bg.jpg',
     date: '',
     author: '',
+    // tag posts with arrays of strings
     tags: [],
     template: templateAddr('postNameHere.html')
   }
 
+
+  // POSTS GO HERE
   bs.posts = {
     'first-post': {
-      heading: 'This is a new test post',
-      subheading: 'This might work!',
+      heading: 'Hello, World!',
+      subheading: 'Welcome to my tech blog!',
+      headerImage: 'img/post-bg.jpg',
       date: 'January 31, 2018',
       author: 'Aaron Kvarnlov-Leverty',
+      tags: ['First post','non-technical'],
       template: templateAddr('first-post.html')
     }
   }
