@@ -1,4 +1,4 @@
-var app = angular.module('App',['ngRoute']);
+var app = angular.module('App',['ngRoute','ngSanitize']);
 
 app.config(function($routeProvider, $locationProvider) {
   $locationProvider.hashPrefix('');
@@ -15,7 +15,7 @@ app.config(function($routeProvider, $locationProvider) {
     templateUrl: '/views/templates/about.html',
     controller: 'AboutController as ac'
   })
-  .when('/post', {
+  .when('/post/:post?', {
     templateUrl: '/views/templates/post.html',
     controller: 'PostController as pc'
   })
