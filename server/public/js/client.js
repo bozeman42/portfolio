@@ -1,10 +1,11 @@
 var app = angular.module('App',['ngRoute']);
 
 app.config(function($routeProvider, $locationProvider) {
+  // $locationProvider.html5Mode(true);
   $locationProvider.hashPrefix('');
   $routeProvider
   .when('/blog', {
-    templateUrl: '/views/templates/home.html',
+    templateUrl: '/views/templates/blog.html',
     controller: 'BlogController as bc'
   })
   .when('/portfolio', {
