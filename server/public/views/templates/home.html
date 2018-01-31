@@ -1,0 +1,40 @@
+<header class="masthead" style="background-image: url('img/home-bg.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>Aaron Kvarnlov-Leverty</h1>
+          <span class="subheading">Full-stack Software Engineer</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <div ng-repeat="(key, post) in bc.posts">
+        <div class="post-preview">
+          <a href="/#/post/{{key}}">
+            <h2 class="post-title">
+              {{post.heading}}
+            </h2>
+            <h3 class="post-subtitle">
+              {{post.subheading}}
+            </h3>
+          </a>
+          <p class="post-meta">Posted by
+            <a href="#">{{post.author}}</a>
+            on {{post.date}}</p>
+        </div>
+        <hr>
+      </div>
+      <!-- Pager -->
+      <div class="clearfix">
+        <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
