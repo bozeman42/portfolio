@@ -27,7 +27,7 @@ app.service('BlogService', function () {
       index: 2,
       heading: "Global Game Jam 2018",
       subheading: "Diving in to new technology.",
-      headerImage: 'img/post-bg.jpg',
+      headerImage: 'img/ent-ro-py.jpg',
       date: 'January 31, 2018',
       author: 'Aaron Kvarnlov-Leverty',
       tags: ['Games','c#','Unity','VR'],
