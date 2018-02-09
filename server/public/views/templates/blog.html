@@ -15,9 +15,9 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
-      <div ng-repeat="(key, post) in bc.posts">
+      <div ng-repeat="post in bc.posts | orderBy: post.index: true">
         <div class="post-preview">
-          <a href="/#/post/{{key}}">
+          <a href="/#/post/{{post.address}}">
             <h2 class="post-title">
               {{post.heading}}
             </h2>
