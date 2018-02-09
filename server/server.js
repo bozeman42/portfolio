@@ -10,4 +10,4 @@ app.use(express.static('server/public'));
 app.use('/api/post',postRouter);
 
 
-app.listen(PORT,() => console.log(`Listening on port ${PORT}...`))
+app.listen(PORT,() => console.log(`Listening on port ${PORT}...`));
