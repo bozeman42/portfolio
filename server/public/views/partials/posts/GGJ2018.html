@@ -2,7 +2,7 @@
   <p>
     Over the last weekend I participated in the
     <a href="https://globalgamejam.org/">2018 Global Game Jam</a> with
-    <a href="https://www.gamecraft.mn/">GameCraftMN</a>. I would first like to talk about the experience of the game jam, and later I will go over a design pattern that I found interesting.
+    <a href="https://www.gamecraft.mn/">GameCraftMN</a>. I would first like to talk about the experience of the game jam, and some small things I learned about C#. There were some design patterns I learned but I'm still working on a good analogy for how to describe them.
   </p>
   <p>
     After an introductory presentation, attendees were given some time to mingle and come up with project ideas. We reconvened
@@ -34,19 +34,15 @@
     In the end I was able to make some modest but meaningful contributions to the project and built a base of knowledge from
     which I can explore Unity with greater confidence.
   </p>
-</section>
 <hr />
-<section id="delegate">
   <p>
-    During this project I was introduced to the 'action delegate' and 'event' patterns in C#. There are a couple terms that may
-    need to be defined before I get to the pattern. There are a couple of pieces that need to be defined: actions, delegates,
-    and events.
+    I hadn't been exposed to C# before this event and it contains a handy operator that I appreciate. It is a <em>null conditional</em> operator. Let's say you have an object that may be <code>null</code>. In your code you wish to access a property on this object so long as the object is not null. There is a very concise way to write this in C#.
+  </p>
+    <code>
+      MyObject?.MyProperty
+    </code>
   </p>
   <p>
-    First, Actions are methods that take a single parameter and do not return a value. Delegates are 
-    
-    <code><pre>
-
-    </pre></code>
+    This will return null if the object is null, and the property if the object is not null. Very handy!
   </p>
 </section>
