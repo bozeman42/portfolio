@@ -6,27 +6,29 @@
     I made a <a href="https://github.com/bozeman42/greeter">small test project</a> to try out both technologies based upon the everyday interaction upon arriving home in Japan. The app listens for you to say '<span style="white-space:nowrap" lang="ja-JP">ただいま</span>' ("I'm home!"), and if you say that, it responds with '<span style="white-space:nowrap" lang="ja-JP">おかえりなさい</span>' ("Welcome back!"). I was shocked at how little code this required. Aside from the webserver to serve the files this is ALL of the project's JavaScript:
   </p>
   <pre><code>
-  let recog = new webkitSpeechRecognition;
-  let ss = speechSynthesis;
-  let welcome = new SpeechSynthesisUtterance('おかえりなさい');
-  let result = document.getElementById('result');
-  recog.onstart = function() {
-    console.log('listening');
-  }
-  
-  recog.lang = 'ja-JP';
-  recog.onresult = function(event) {
-    console.log('Speech detected',event);
-    let text = event.results[0][0].transcript;
-    result.textContent = text;
-    if (text.includes('ただいま')) {
-      ss.speak(welcome);
+    let recog = new webkitSpeechRecognition;
+    let welcome = new SpeechSynthesisUtterance('おかえりなさい');
+    let result = document.getElementById('result');
+    
+    recog.lang = 'ja-JP';
+    recog.onresult = function(event) {
+      let text = event.results[0][0].transcript;
+      result.textContent = text;
+      if (text.includes('ただいま')) {
+        speechSynthesis.speak(welcome);
+      }
     }
-  }
-  speechSynthesis.onvoiceschanged = () => {
-    welcome.voice = speechSynthesis.getVoices()[18];
-  }
-  
-  recog.start();
+    speechSynthesis.onvoiceschanged = () => {
+      welcome.voice = speechSynthesis.getVoices()[18];
+    }
+    
+    recog.start();
   </code></pre>
+  <p>
+    These APIs are considered experimental, so be cautious about using them in production, but they seem fun for personal projects! Check out the docs and try it out!
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis">Speech Synthesis Docs</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition">Speech Recognition Docs</a></li>
+    </ul>
+  </p>
 </section>
