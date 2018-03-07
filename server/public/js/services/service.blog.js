@@ -45,6 +45,17 @@ app.service('BlogService', function () {
       author: 'Aaron Kvarnlov-Leverty',
       tags: ['Games', 'c#', 'Unity', 'VR'],
       template: templateAddr('GGJ2018.html')
-    }
+    },
+    {
+      index: 3,
+      address: 'speech-apis',
+      heading: "Speech APIs",
+      subheading: "Speech recognition and synthesis in modern browsers.",
+      headerImage: 'img/microphone.jpeg',
+      date: 'March 6, 2018',
+      author: 'Aaron Kvarnlov-Leverty',
+      tags: ['HTML5','Voice Recognition'],
+      template: templateAddr('speech-apis.html')
+    },
   ]
 });

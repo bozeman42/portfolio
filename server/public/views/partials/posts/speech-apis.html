@@ -1,0 +1,32 @@
+<section>
+  <p>
+    While working on a <a href="https://github.com/bozeman42/zotn" alt="Zombies of the North github repository">project</a>, I decided to try out making the browser speak, and to my surprise it was quite simple! There were no third-party libraries to import, though speech recognition is mostly <a href="https://caniuse.com/#search=speechrecognition">supported by chrome</a> with the 'webkit' prefix. Speech synthesis has <a href="https://caniuse.com/#search=speechsynthesis">much broader support</a>.
+  </p>
+  <p>
+    I made a <a href="https://github.com/bozeman42/greeter">small test project</a> to try out both technologies based upon the everyday interaction upon arriving home in Japan. The app listens for you to say '<span style="white-space:nowrap" lang="ja-JP">ただいま</span>' ("I'm home!"), and if you say that, it responds with '<span style="white-space:nowrap" lang="ja-JP">おかえりなさい</span>' ("Welcome back!"). I was shocked at how little code this required. Aside from the webserver to serve the files this is ALL of the project's JavaScript:
+  </p>
+  <pre><code>
+  let recog = new webkitSpeechRecognition;
+  let ss = speechSynthesis;
+  let welcome = new SpeechSynthesisUtterance('おかえりなさい');
+  let result = document.getElementById('result');
+  recog.onstart = function() {
+    console.log('listening');
+  }
+  
+  recog.lang = 'ja-JP';
+  recog.onresult = function(event) {
+    console.log('Speech detected',event);
+    let text = event.results[0][0].transcript;
+    result.textContent = text;
+    if (text.includes('ただいま')) {
+      ss.speak(welcome);
+    }
+  }
+  speechSynthesis.onvoiceschanged = () => {
+    welcome.voice = speechSynthesis.getVoices()[18];
+  }
+  
+  recog.start();
+  </code></pre>
+</section>
