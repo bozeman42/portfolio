@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.6.8",
+    "angular-marked": "^1.2.2",
     "angular-route": "^1.6.8",
     "express": "^4.16.2"
   }
