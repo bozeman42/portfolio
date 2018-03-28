@@ -1,6 +1,6 @@
 var app = angular.module('App',['ngRoute','hc.marked']);
 
-app.config(function($routeProvider, $locationProvider) {
+app.config(function($routeProvider, $locationProvider,markedProvider) {
   // $locationProvider.html5Mode(true);
   $locationProvider.hashPrefix('');
   $routeProvider
@@ -28,18 +28,16 @@ app.config(function($routeProvider, $locationProvider) {
   .otherwise({
     redirectTo: '/blog'
   });
-
-  app.config(['markedProvider', function (markedProvider) {
-    markedProvider.setOptions({
-      gfm: true,
-      tables: true,
-      highlight: function (code, lang) {
-        if (lang) {
-          return hljs.highlight(lang, code, true).value;
-        } else {
-          return hljs.highlightAuto(code).value;
-        }
+  
+  markedProvider.setOptions({
+    gfm: true,
+    tables: true,
+    highlight: function (code, lang) {
+      if (lang) {
+        return hljs.highlight(lang, code, true).value;
+      } else {
+        return hljs.highlightAuto(code).value;
       }
-    });
-  }]);
+    }
+  });
 })
